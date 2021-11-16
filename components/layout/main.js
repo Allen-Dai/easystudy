@@ -9,7 +9,6 @@ const Main = ({ children, router }) => {
         <title>Easystudy</title>
       </Head>
 
-
       {children}
     </Box>
   );
