@@ -31,10 +31,11 @@ const FlipCard = () =>{
     const arr = shuffle(textarea.match(/\S+/g));
     var r = [];
     arr.forEach( (word, i)=>{
-      r.push(<Card key={i} state="start" >{word}</Card>);
+      r.push(<Card key={i} state={reset} >{word}</Card>);
     });
     setWords(r);
     setFormDisplay("none");
+    setReset(reset+"1");
     }
   }
 
