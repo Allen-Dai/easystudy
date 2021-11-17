@@ -10,7 +10,7 @@ const FlipCard = () =>{
   const [formDisplay, setFormDisplay] = useState("block");
   const {width} = useWindowDimensions();
   const [columns, setColumns] = useState(10);
-  const [reset, setReset] = useState("");
+  const [reset, setReset] = useState(false);
   useEffect( ()=>{
     setColumns(Math.floor(width/200));
   },[width])
@@ -35,7 +35,7 @@ const FlipCard = () =>{
     });
     setWords(r);
     setFormDisplay("none");
-    setReset(reset+"1");
+    setReset(!reset);
     }
   }
 
@@ -48,7 +48,7 @@ const FlipCard = () =>{
       r.push(<Card key={i} state={reset} >{word}</Card>);
     });
     setWords(r);
-    setReset(reset+"1");
+    setReset(!reset);
     }
   }
 
